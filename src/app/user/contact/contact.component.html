@@ -1,0 +1,52 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px; border-radius: 20px;">
+    <div class="text-center mb-4">
+      <h1 class="fw-bold">Contact Us</h1>
+    </div>
+
+    <form (ngSubmit)="submitContactForm()" #contactForm="ngForm">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          [(ngModel)]="contact.name"
+          placeholder="Your Name"
+          required
+        />
+        <label for="name">Name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="contact.email"
+          placeholder="Your Email"
+          required
+        />
+        <label for="email">Email</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <textarea
+          class="form-control"
+          id="message"
+          name="message"
+          [(ngModel)]="contact.message"
+          placeholder="Your Message"
+          style="height: 100px"
+          required
+        ></textarea>
+        <label for="message">Message</label>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success">Send</button>
+      </div>
+    </form>
+  </div>
+</div>

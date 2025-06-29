@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Project </h2>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+    <div class="col" *ngFor="let pro of u">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-success">{{ pro.pname }}</h5>
+          <p class="card-text">
+            <strong>project link:</strong> {{ pro.plink }}<br />
+            <strong>project describtion:</strong> {{ pro.descrbtion }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

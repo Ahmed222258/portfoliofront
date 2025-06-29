@@ -1,0 +1,90 @@
+<!-- <form (ngSubmit)="submitForm()">
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="user.name" name="name" />
+
+  <label>Birthdate:</label>
+  <input type="date" [(ngModel)]="user.birtdate" name="birtdate" />
+
+  <label>Phone Number:</label>
+  <input type="text" [(ngModel)]="user.phonenumber" name="phonenumber" />
+
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="user.email" name="email" />
+
+  <button type="submit">Update User</button>
+</form> -->
+
+
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px; border-radius: 20px;">
+    <div class="text-center mb-4">
+      
+      <h1 class="fw-bold">Update User</h1>
+      
+    </div>
+
+    <form (ngSubmit)="submitForm()" #userForm="ngForm">
+      <!-- Name -->
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          [(ngModel)]="user.name"
+          placeholder="Name"
+          required
+        />
+        <label for="name">Name</label>
+      </div>
+
+      <!-- Birthdate -->
+      <div class="form-floating mb-3">
+        <input
+          type="date"
+          class="form-control"
+          id="birthdate"
+          name="birtdate"
+          [(ngModel)]="user.birtdate"
+          placeholder="Birthdate"
+          required
+        />
+        <label for="birthdate">Birthdate</label>
+      </div>
+
+      <!-- Phone -->
+      <div class="form-floating mb-3">
+        <input
+          type="tel"
+          class="form-control"
+          id="phone"
+          name="phonenumber"
+          [(ngModel)]="user.phonenumber"
+          placeholder="Phone Number"
+          required
+        />
+        <label for="phone">Phone Number</label>
+      </div>
+
+      <!-- Email -->
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="user.email"
+          placeholder="Email"
+          required
+        />
+        <label for="email">Email</label>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success">Update User</button>
+      </div>
+    </form>
+  </div>
+</div>

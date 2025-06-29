@@ -1,0 +1,65 @@
+
+ <div class="container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px; border-radius: 20px;">
+    <div class="text-center mb-4">
+
+      <h1 class="fw-bold">Add project</h1>
+    </div>
+
+    <form (ngSubmit)="submitForm()" #userForm="ngForm">
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="pname"
+          name="pname"
+          [(ngModel)]="project.pname"
+          placeholder="project name"
+          required
+        />
+        <label for="pname">project name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="plink"
+          name="plink"
+          [(ngModel)]="project.plink"
+          placeholder="project link"
+          required
+        />
+        <label for="plink">project link</label>
+
+
+      </div>
+
+
+
+            <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="desc"
+          name="desc"
+          [(ngModel)]="project.descrbtion"
+          placeholder="project describtion"
+          required
+        />
+        <label for="desc">project describtion</label>
+      </div>
+
+
+
+
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success">Add</button>
+      </div>
+    </form>
+
+
+  </div>
+</div>

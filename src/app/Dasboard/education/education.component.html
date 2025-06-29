@@ -1,0 +1,91 @@
+<!--
+ <div class="container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px; border-radius: 20px;">
+    <div class="text-center mb-4">
+
+      <h1 class="fw-bold">Add Education</h1>
+    </div>
+
+    <form (ngSubmit)="submitForm()" #userForm="ngForm">
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="place"
+          name="place"
+          [(ngModel)]="education.place"
+          placeholder="place"
+          required
+        />
+        <label for="place">place</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="date"
+          class="form-control"
+          id="startdate"
+          name="startdate"
+          [(ngModel)]="education.sdate"
+          placeholder="startdate"
+          required
+        />
+        <label for="startdate">start date</label>
+      </div>
+
+  <div class="form-floating mb-3">
+        <input
+          type="date"
+          class="form-control"
+          id="edate"
+          name="edate"
+          [(ngModel)]="education.edate"
+          placeholder="edate"
+          required
+        />
+        <label for="edate">end date</label>
+      </div>
+
+   <div class="form-floating mb-3">
+        <input
+          type="number"
+          class="form-control"
+          id="grade"
+          name="grade"
+          [(ngModel)]="education.grade"
+          placeholder="grade"
+          required
+        />
+        <label for="grade">grade</label>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success">Add</button>
+      </div>
+    </form>
+
+
+  </div>
+</div>  -->
+
+<!-- 🔷 Education Cards -->
+<div class="card-container">
+  <div *ngFor="let e of educations" class="card" (click)="onCardClick(e)">
+    <h3>{{ e.place }}</h3>
+    <p><strong>From:</strong> {{ e.sdate | date }}</p>
+    <p><strong>To:</strong> {{ e.edate | date }}</p>
+    <p><strong>Grade:</strong> {{ e.grade }}</p>
+  </div>
+</div>
+
+<!-- ✏️ Update Form -->
+<form (ngSubmit)="onUpdate()" *ngIf="education._id" class="update-form">
+  <h4>Update Education</h4>
+  <input [(ngModel)]="education.place" name="place" placeholder="Place" required />
+  <input [(ngModel)]="education.sdate" name="sdate" type="date" required />
+  <input [(ngModel)]="education.edate" name="edate" type="date" required />
+  <input [(ngModel)]="education.grade" name="grade" type="number" required />
+  <button type="submit">Update</button>
+</form>
+

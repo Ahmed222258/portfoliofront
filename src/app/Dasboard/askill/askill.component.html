@@ -1,0 +1,52 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px; border-radius: 20px;">
+    <div class="text-center mb-4">
+      <h1 class="fw-bold">Add Skill</h1>
+    </div>
+
+    <form (ngSubmit)="submitSkillForm()" #skillForm="ngForm">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="sname"
+          name="sname"
+          [(ngModel)]="skill.sname"
+          placeholder="Skill Name"
+          required
+        />
+        <label for="sname">Skill Name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="sdesc"
+          name="sdesc"
+          [(ngModel)]="skill.sdesc"
+          placeholder="Skill Description"
+          required
+        />
+        <label for="sdesc">Skill Description</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="level"
+          name="level"
+          [(ngModel)]="skill.level"
+          placeholder="Skill Level"
+          required
+        />
+        <label for="level">Skill Level</label>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="card-container mt-5">
+  <h2 class="text-center mb-4">Skills</h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+    <div class="col" *ngFor="let s of skills">
+      <div class="card h-100 shadow-sm" (click)="onSkillCardClick(s)">
+        <div class="card-body">
+          <h5 class="card-title text-primary">{{ s.sname }}</h5>
+          <p class="card-text">
+            <strong>Description:</strong> {{ s.sdesc }}<br />
+            <strong>Level:</strong> {{ s.level }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<form (ngSubmit)="onSkillUpdate()" *ngIf="skill._id" class="update-form mt-4 p-4 border rounded bg-light">
+  <h4>Update Skill</h4>
+  <input [(ngModel)]="skill.sname" name="sname" placeholder="Skill Name" class="form-control mb-2" required />
+  <input [(ngModel)]="skill.sdesc" name="sdesc" placeholder="Skill Description" class="form-control mb-2" required />
+  <input [(ngModel)]="skill.level" name="level" placeholder="Skill Level" class="form-control mb-3" required />
+  <button type="submit" class="btn btn-warning w-100">Update Skill</button>
+</form>

@@ -1,0 +1,16 @@
+<div class="card-container">
+  <div *ngFor="let p of projects" class="card" (click)="onCardClick(p)">
+    <h3>{{ p.pname }}</h3>
+    <p><strong>Link:</strong> <a href="{{ p.plink }}" target="_blank">{{ p.plink }}</a></p>
+    <p>{{ p.descrbtion }}</p>
+  </div>
+</div>
+
+
+<form (ngSubmit)="onUpdate()" *ngIf="project._id" class="update-form">
+  <h4>Update Project</h4>
+  <input [(ngModel)]="project.pname" name="pname" placeholder="Project Name" required />
+  <input [(ngModel)]="project.plink" name="plink" placeholder="Project Link" required />
+  <textarea [(ngModel)]="project.descrbtion" name="descrbtion" placeholder="Description" required></textarea>
+  <button type="submit">Update</button>
+</form>
